@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohabuddin Kashif Syed - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2e2e2e, #4a90e2);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #d3d3d3;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #4a90e2;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #d3d3d3;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4a90e2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 20px 0 10px;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.1em;
+            color: #d3d3d3;
+        }
+
+        ul li:before {
+            content: '➜';
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-size: 1.4em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #d3d3d3;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #357abd;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1.1em; }
+            .navbar .container { flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+            .nav-links li { margin: 0 10px; }
+            .section h2 { font-size: 1.6em; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Sohabuddin Kashif Syed</h1>
+            <ul class="nav-links">
+                <li><a href="#" data-section="home" class="active">Home</a></li>
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="projects">Projects</a></li>
+                <li><a href="#" data-section="research">Research</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="section active">
+        <div class="hero">
+            <div class="container">
+                <h1>Sohabuddin Kashif Syed</h1>
+                <p>Computer Science Graduate Student | Texas A&M University-Corpus Christi<br>
+                   <a href="https://www.linkedin.com/in/sd-kashif" target="_blank">LinkedIn</a></p>
+                <a href="#" data-section="about" class="btn">Explore My Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <h3>Professional Summary</h3>
+            <p>A dedicated Computer Science professional with a passion for leveraging technology to solve real-world problems. I aim to contribute effectively to organizational growth through innovative systems and solutions, thriving in environments that foster excellence and personal development.</p>
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Master of Science - Computer Science</strong><br>Texas A&M University-Corpus Christi | Jan 2024 - Dec 2026 (Expected) | GPA: 3.0</li>
+                <li><strong>Bachelor of Engineering - Computer Science Engineering</strong><br>Narayana Engineering College | 2019 - 2023</li>
+            </ul>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li><strong>Programming:</strong> Python, C, HTML, CSS, SQL, MATLAB</li>
+                <li><strong>Technologies:</strong> IoT, MS Office</li>
+                <li><strong>Soft Skills:</strong> Communication, Leadership, Problem Solving, Team Collaboration</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Traffic Sign and Lane Detection Using SSLA</h3>
+                    <p>Designed an algorithm for autonomous vehicles utilizing machine learning to detect traffic signs and lanes, enabling fully automated driving functions.</p>
+                </div>
+                <div class="project-card">
+                    <h3>IoT-Based Plant Monitoring System</h3>
+                    <p>Developed a real-time plant health monitoring system with IoT sensors, providing cloud-based analytics and automated alerts for optimal plant care.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Humanoid Robot</h3>
+                    <p>Engineered an open-source humanoid robot powered by Arduino, featuring movable limbs, obstacle detection, and Bluetooth connectivity for educational purposes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Research Section -->
+    <div id="research" class="section">
+        <div class="container">
+            <h2>Research & Achievements</h2>
+            <h3>Research and Publications</h3>
+            <ul>
+                <li><strong>Automatic Engine Locking System for Drunken Drivers</strong><br>A safety mechanism using alcohol detection sensors to prevent intoxicated individuals from operating vehicles, enhancing road safety.</li>
+                <li><strong>IoT-Based ICU Health Monitoring System</strong><br>Real-time remote monitoring of ICU patients’ vital signs using connected sensors and data analytics for timely interventions.</li>
+                <li><strong>Sign Language Detection</strong><br>A system leveraging computer vision and machine learning to translate sign language gestures into text or speech, improving accessibility.</li>
+            </ul>
+            <h3>Certifications</h3>
+            <ul>
+                <li>Internship Certificate from Coding Expert Club for Web Development (Meme Generator using ReactJS)</li>
+                <li>Presented paper on "Internet of Things" at NBKR Institute of Science and Technology, Andhra Pradesh</li>
+                <li>Participated in National Level Fest 'Robotic' 2022 at Malla Reddy University, Hyderabad</li>
+            </ul>
+            <h3>Workshops</h3>
+            <ul>
+                <li>2-Day Workshop on Future of Drone Technology and Its Applications by Aries Solution Pvt Ltd</li>
+                <li>2-Day Workshop on Arduino by ACE Engineering College</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <div class="container">
+            <h2>Contact & Additional Information</h2>
+            <h3>Contact Details</h3>
+            <p>+1 (361) 779-0808 | ssyed6@islander.tamucc.edu | 
+                <a href="https://www.linkedin.com/in/sd-kashif" target="_blank">LinkedIn</a></p>
+            <h3>Extracurricular Activities</h3>
+            <ul>
+                <li>Certificate in Honeywell Youth India RPA Teckathon-2022</li>
+                <li>Developed hobby projects based on Arduino</li>
+                <li>Active participation in college event organization</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Sohabuddin Kashif Syed | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+
+                // Remove active class from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                // Add active class to clicked link and corresponding section
+                link.classList.add('active');
+                document.getElementById(sectionId).classList.add('active');
+
+                // Smooth scroll to section
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Handle "Explore My Profile" button
+        document.querySelector('.btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            document.querySelector('[data-section="about"]').classList.add('active');
+            document.getElementById('about').classList.add('active');
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
